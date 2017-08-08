@@ -1,7 +1,9 @@
-### A/B Deployment ### 
+# A/B Deployment # 
 
 1.Create an empty project.
+```
 oc new-project cotd-ab --display-name="COTD With A/B Deployment" --description=""COTD With A/B Deployment"
+```
 
 2.Create an application instance, for serving cats.
 oc new-app --name='cotd1' -l name='cotd' php~https://github.com/leomachadorocha/cotd.git -e SELECTOR=cats
@@ -29,7 +31,7 @@ oc edit route ab-cotd-route
 7.Test again.
 while true; do curl -s http://ab-cotd-route-lr-deployment.apps.gru.example.opentlc.com/item.php | grep "data/images" | awk '{print $5}'; sleep 1; done
 
-### BLUE/GREEN Deployment ###
+# BLUE/GREEN Deployment #
 
 1.Delete the previous route.
 oc delete route ab-cotd-route
