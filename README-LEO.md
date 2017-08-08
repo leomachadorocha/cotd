@@ -2,7 +2,7 @@
 
 1. Create an empty project.
 ```
-oc new-project cotd-ab --display-name="COTD With A/B Deployment" --description=""COTD With A/B Deployment"
+oc new-project cotd-ab --display-name="COTD With A/B Deployment" --description="COTD With A/B Deployment"
 ```
 
 2. Create an application instance, for serving cats.
