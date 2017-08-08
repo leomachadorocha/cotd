@@ -44,7 +44,8 @@ oc edit route ab-cotd-route
 while true; do curl -s http://ab-cotd-route-lr-deployment.apps.gru.example.opentlc.com/item.php | grep "data/images" | awk '{print $5}'; sleep 1; done
 
 ```
-
+   
+      
 
 # BLUE/GREEN Deployment #
 
