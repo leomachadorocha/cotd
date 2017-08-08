@@ -18,7 +18,7 @@ oc new-app --name='cotd2' -l name='cotd' php~https://github.com/leomachadorocha/
 ```
 
 
-# A/B Deployment # 
+# Demonstrate A/B Deployment # 
 
 4. Create a route that uses A/B routing across the two versions, initially using 50/50.
 ```
@@ -49,7 +49,7 @@ while true; do curl -s http://ab-cotd-route-lr-deployment.apps.gru.example.opent
 ```
 
 
-# BLUE/GREEN Deployment #
+# Demonstrate BLUE/GREEN Deployment #
 
 1. Delete the previous route.
 ```
