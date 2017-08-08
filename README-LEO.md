@@ -1,4 +1,4 @@
-# A/B Deployment # 
+# Create the Projects # 
 
 1. Create an empty project.
 ```
@@ -16,6 +16,9 @@ OBS: SELECTOR can be equal to cats, cities, or pets.
 ```
 oc new-app --name='cotd2' -l name='cotd' php~https://github.com/leomachadorocha/cotd.git -e SELECTOR=cities
 ```
+
+
+# A/B Deployment # 
 
 4. Create a route that uses A/B routing across the two versions, initially using 50/50.
 ```
@@ -44,8 +47,7 @@ oc edit route ab-cotd-route
 while true; do curl -s http://ab-cotd-route-lr-deployment.apps.gru.example.opentlc.com/item.php | grep "data/images" | awk '{print $5}'; sleep 1; done
 
 ```
-   
-      
+
 
 # BLUE/GREEN Deployment #
 
