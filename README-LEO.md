@@ -10,7 +10,7 @@ oc new-project cotd-ab --display-name="COTD With A/B Deployment" --description="
 oc new-app --name='cotd1' -l name='cotd' php~https://github.com/leomachadorocha/cotd.git -e SELECTOR=cats
 ```
 
-OBS: SELECTOR can be equal to cats, cities, or pets.
+> OBS: SELECTOR can be equal to cats, cities, or pets.
 
 3. Create a second instance of the cotd application, for serving cities, using a different SELECTOR.
 ```
@@ -28,7 +28,7 @@ oc set route-backends ab-cotd-route cotd1=50 cotd2=50
 
 5. Test that your service returns images from each of the two categories you selected.
 
-OBS: Servers use cookies to remember state between calls. The A/B router uses affinity to route subsequent requests to the same back-end instance of the application. Because browsers send cookies when issuing HTTP requests, during testing you may end up reaching the same back-end instance for each request. If using a browser, you can clear the cookies, use incognito mode, or use different browsers to retrieve different pictures. We can use curl to avoid this issue.
+> OBS: Servers use cookies to remember state between calls. The A/B router uses affinity to route subsequent requests to the same back-end instance of the application. Because browsers send cookies when issuing HTTP requests, during testing you may end up reaching the same back-end instance for each request. If using a browser, you can clear the cookies, use incognito mode, or use different browsers to retrieve different pictures. We can use curl to avoid this issue.
 ```
 oc get routes (see <HOST/PORT>)
 ```
